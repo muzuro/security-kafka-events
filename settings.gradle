@@ -1,0 +1,5 @@
+rootProject.name="security-kafka-events"
+
+include "account"
+include "notification"
+include "common"

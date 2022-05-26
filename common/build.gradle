@@ -1,0 +1,19 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm"
+    id "org.springframework.boot"
+    id "io.spring.dependency-management"
+    id "org.jetbrains.kotlin.plugin.spring"
+    id "org.jetbrains.kotlin.plugin.jpa"
+}
+
+dependencies {
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    api "org.jetbrains.kotlin:kotlin-reflect"
+    api "org.springframework.boot:spring-boot-starter-web"
+    api "org.springframework.boot:spring-boot-starter-security"
+    api 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+
+    implementation "org.apache.commons:commons-lang3"
+    implementation 'io.github.microutils:kotlin-logging-jvm:2.1.20'
+
+}
