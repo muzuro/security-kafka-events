@@ -40,6 +40,7 @@ class WebSecurityConfig(
     }
 
     override fun configure(http: HttpSecurity) {
+
         http
             .addFilterAfter(
                 ServiceTokenAuthenticationFilter(serviceAuthenticationProvider),

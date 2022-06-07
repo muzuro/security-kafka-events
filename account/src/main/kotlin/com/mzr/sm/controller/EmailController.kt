@@ -1,6 +1,5 @@
 package com.mzr.sm.controller
 
-import com.mzr.sm.event.KafkaProducer
 import com.mzr.sm.service.EmailServiceImpl
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RestController

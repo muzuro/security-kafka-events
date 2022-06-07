@@ -10,7 +10,7 @@ class NotificationService {
     val logger = KotlinLogging.logger {  }
 
     @PreAuthorize("hasAuthority('email.update')")
-    fun verifyEmail(email: String) {
+    fun sendVerificationEmail(email: String) {
         logger.info { "TODO: send verify email to $email" }
     }
 

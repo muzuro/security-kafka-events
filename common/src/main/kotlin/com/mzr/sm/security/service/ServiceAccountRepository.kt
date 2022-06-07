@@ -9,9 +9,11 @@ class ServiceAccountRepository(
     private val serviceToken: String,
 ) {
 
-    val storage = mutableListOf(ServiceAccount(serviceToken, listOf("password.outdated")))
+    val storage = mutableListOf(ServiceAccount("Default Service Account", serviceToken, listOf("password.outdated")))
 
-    fun findServiceAccount(token: String) = storage.firstOrNull { it.token == token }
+    fun findServiceAccountByName(name: String) = storage.first { it.name == name }
+
+    fun findServiceAccountByToken(token: String) = storage.firstOrNull { it.token == token }
 
     fun removeServiceAccount(token: String) = storage.removeIf { it.token == token }
 

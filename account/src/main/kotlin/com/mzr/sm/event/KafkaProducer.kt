@@ -16,16 +16,12 @@ class KafkaProducer(
 
     fun sendMessage(eventType: String, message: String) {
         val payload = "$eventType:$message"
-        val record = ProducerRecord<String, String>(TOPIC, payload)
+        val record = ProducerRecord<String, String>("events", payload)
         record.headers().add("Authorization", securityService.createAuthHeaderString().toByteArray())
         kafkaTemplate.send(record).addCallback(
             { logger.info { "Payload sent to topic: $payload" } },
             { ex -> logger.error(ex) { "Failed to send message" } }
         )
-    }
-
-    companion object {
-        const val TOPIC = "events"
     }
 
 }
